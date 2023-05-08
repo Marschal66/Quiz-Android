@@ -5,10 +5,9 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class Question {
+public class Answer {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id")
     private int id;
-    @ColumnInfo(name = "question")
-    private String question;
+    @ColumnInfo(name = "answer")
+    private String answer;
 }
