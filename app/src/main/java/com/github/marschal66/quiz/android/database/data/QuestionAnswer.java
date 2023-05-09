@@ -16,4 +16,3 @@ public class QuestionAnswer {
     @ColumnInfo(name = "answerID")
     private int answerID;
 }
-

@@ -11,7 +11,7 @@ public enum Level {
     private final short id;
     private final String name;
 
-    private Level(){
+    Level(){
         this.id = (short) this.ordinal();
         this.name = this.toString();
     }

@@ -1,7 +1,5 @@
 package com.github.marschal66.quiz.android.logging;
 
-import androidx.annotation.NonNull;
-
 public class Logger {
 
     // default values
@@ -54,6 +52,6 @@ public class Logger {
         }
 
         // TODO: replace with logger
-        System.out.print(logMessage.toString());
+        System.out.print(logMessage);
     }
 }
