@@ -3,9 +3,11 @@ package com.github.marschal66.quiz.android.database;
 import android.app.Application;
 
 import com.github.marschal66.quiz.android.database.dao.AnswerDao;
+import com.github.marschal66.quiz.android.database.dao.CorrectAnswerDao;
 import com.github.marschal66.quiz.android.database.dao.QuestionAnswerDao;
 import com.github.marschal66.quiz.android.database.dao.QuestionDao;
 import com.github.marschal66.quiz.android.database.data.Answer;
+import com.github.marschal66.quiz.android.database.data.CorrectAnswer;
 import com.github.marschal66.quiz.android.database.data.Question;
 import com.github.marschal66.quiz.android.database.data.QuestionAnswer;
 import com.github.marschal66.quiz.android.database.data.Quiz;
@@ -14,12 +16,14 @@ public class QuestionRepository {
     private final QuestionDao questionDao;
     private final AnswerDao answerDao;
     private final QuestionAnswerDao questionAnswerDao;
+    private final CorrectAnswerDao correctAnswerDao;
 
     public QuestionRepository(Application application) {
         QuestionDatabase db = QuestionDatabase.getInstance(application);
         questionDao = db.questionDao();
         answerDao = db.answerDao();
         questionAnswerDao = db.questionAnswerDao();
+        correctAnswerDao = db.correctAnswerDao();
     }
 
     public Quiz getQuiz(int questionID){
@@ -38,6 +42,10 @@ public class QuestionRepository {
         QuestionDatabase.databaseWriteExecutor.execute(() -> questionAnswerDao.insert(questionAnswer));
     }
 
+    public void insertCorrectAnswer(CorrectAnswer correctAnswer) {
+        QuestionDatabase.databaseWriteExecutor.execute(() -> correctAnswerDao.insert(correctAnswer));
+    }
+
     public void updateQuestion(Question question) {
         QuestionDatabase.databaseWriteExecutor.execute(() -> questionDao.update(question));
     }
@@ -48,6 +56,10 @@ public class QuestionRepository {
 
     public void updateQuestionAnswer(QuestionAnswer questionAnswer) {
         QuestionDatabase.databaseWriteExecutor.execute(() -> questionAnswerDao.update(questionAnswer));
+    }
+
+    public void updateCorrectAnswer(CorrectAnswer correctAnswer) {
+        QuestionDatabase.databaseWriteExecutor.execute(() -> correctAnswerDao.update(correctAnswer));
     }
 
 }
