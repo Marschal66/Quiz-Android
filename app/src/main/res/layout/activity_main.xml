@@ -6,34 +6,43 @@
     android:layout_height="match_parent"
     tools:context="com.github.marschal66.quiz.android.ui.MainActivity">
 
+    <TextView
+        android:id="@+id/txtVwTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="32dp"
+        android:text="Hauptmenü"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/layMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/btnEditQuiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quiz Bearbeiten"
-            />
+            android:layout_margin="5dp"
+            android:text="Quiz Bearbeiten" />
 
         <Button
             android:id="@+id/btnPlayQuiz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quiz Starten"
-            />
+            android:layout_margin="5dp"
+            android:text="Quiz Starten" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
